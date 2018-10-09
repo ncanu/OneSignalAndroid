@@ -1,5 +1,7 @@
 package global.inin.mytestingos.retrofit;
 
+import global.inin.mytestingos.login.LoginRequest;
+import global.inin.mytestingos.login.LoginResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -7,11 +9,14 @@ import retrofit2.http.POST;
 
 public interface APIController {
 
-    @GET("cybersource/public/key")
-    Call<String> getPublicKey();
+    @POST("user/login/4")
+    Call<LoginResponse> postLogin(@Body LoginRequest request);
 
-    @POST("cybersource/creditcard")
-    Call<String> sendEncryptedMessage(@Body String encryptedMessage);
+//    @GET("cybersource/public/key")
+//    Call<String> getPublicKey();
+
+//    @POST("cybersource/creditcard")
+//    Call<String> sendEncryptedMessage(@Body String encryptedMessage);
 
 
 }
